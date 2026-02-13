@@ -1,5 +1,5 @@
 <script>
-  fetch("http://localhost:5000/api/message")
+  fetch("http://host.docker.internal:5000/api/message")
     .then(r => r.json())
     .then(d => {
       document.getElementById("msg").innerText = d.message;
