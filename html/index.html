@@ -9,7 +9,7 @@
   <p id="msg">Caricamento...</p>
 
   <script>
-    fetch("http://backend:5000//api/message")  <!-- chiama il backend stesso -->
+    fetch("http://localhost:5000//api/message")  <!-- chiama il backend stesso -->
       .then(r => r.json())
       .then(d => {
         document.getElementById("msg").innerText = d.message;
