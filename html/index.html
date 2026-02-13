@@ -1,7 +1,5 @@
 <script>
-  const backendUrl = "http://backend:5000"; // backend = nome servizio docker-compose
-
-  fetch(`${backendUrl}/api/message`)
+  fetch("http://localhost:5000/api/message")
     .then(r => r.json())
     .then(d => {
       document.getElementById("msg").innerText = d.message;
