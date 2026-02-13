@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Frontend Demo</title>
+</head>
+<body>
+  <h1>Frontend</h1>
+  <p id="msg">Caricamento...</p>
+
+  <script>
+    fetch("http://localhost:5000/api/message")
+      .then(r => r.json())
+      .then(d => {
+        document.getElementById("msg").innerText = d.message;
+      })
+      .catch(() => {
+        document.getElementById("msg").innerText = "Errore nel chiamare il backend";
+      });
+  </script>
+</body>
+</html>
+
