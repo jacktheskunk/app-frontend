@@ -1,23 +1,13 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-  <meta charset="UTF-8">
-  <title>Frontend Demo</title>
-</head>
-<body>
-  <h1>Frontend</h1>
-  <p id="msg">Caricamento...</p>
+<script>
+  const backendUrl = "http://backend:5000"; // backend = nome servizio docker-compose
 
-  <script>
-    fetch("http://localhost:5000/api/message")
-      .then(r => r.json())
-      .then(d => {
-        document.getElementById("msg").innerText = d.message;
-      })
-      .catch(() => {
-        document.getElementById("msg").innerText = "Errore nel chiamare il backend";
-      });
-  </script>
-</body>
-</html>
+  fetch(`${backendUrl}/api/message`)
+    .then(r => r.json())
+    .then(d => {
+      document.getElementById("msg").innerText = d.message;
+    })
+    .catch(() => {
+      document.getElementById("msg").innerText = "Errore nel chiamare il backend";
+    });
+</script>
 
